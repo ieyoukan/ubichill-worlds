@@ -1,0 +1,142 @@
+apiVersion: ubichill.com/v1alpha1
+kind: World
+metadata:
+  name: chillwa
+  author:
+    name: devようかん
+    url: https://github.com/ieyoukan
+  version: 1.0.0
+spec:
+  displayName: ちるわ
+  description: "ペンで自由に描きながら、みんなで動画や音楽を楽しむチルワールド"
+  capacity:
+    default: 10
+    max: 20
+  environment:
+    worldSize:
+      width: 1600
+      height: 1000
+    backgroundColor: "#EEF3F8"
+  dependencies:
+    - name: pen
+      source:
+        version: 2.0.0
+    - name: video-player
+      source:
+        url: https://ieyoukan.github.io/ubichill-videoplayer
+        version: 3.0.0
+  initialEntities:
+    - id: pentray
+      tags: []
+      children:
+        - id: pen-blue
+          tags: []
+          children: []
+          transform:
+            x: 9
+            y: 7
+            z: 6
+            w: 55
+            h: 48
+            scale: 1
+            rotation: 0
+          components:
+            - type: pen:pen
+              overlay: top-left
+              data:
+                color: "#93bcf0"
+                strokeWidth: 4
+        - id: pen-black
+          tags: []
+          children: []
+          transform:
+            x: 76
+            y: 6
+            z: 6
+            w: 57
+            h: 57
+            scale: 1
+            rotation: 0
+          components:
+            - type: pen:pen
+              overlay: top-left
+              data:
+                color: "#1a1a1a"
+                strokeWidth: 4
+      transform:
+        x: 16
+        y: 16
+        z: 4
+        w: 266
+        h: 67
+        scale: 1
+        rotation: 0
+      components:
+        - type: pen:tray
+          overlay: top-left
+          data: {}
+    - id: drawing-layer
+      tags: []
+      children: []
+      transform:
+        x: 0
+        y: 0
+        z: 60
+        scale: 1
+        rotation: 0
+      components:
+        - type: pen:canvas
+          data: {}
+    - id: lounge-player
+      tags: []
+      children: []
+      transform:
+        x: 0
+        y: 0
+        z: 0
+        scale: 1
+        rotation: 0
+      components:
+        - id: screen
+          type: video-player:screen
+          transform:
+            x: 480
+            y: 80
+            z: 100
+            w: 640
+            h: 360
+          data: {}
+        - id: controls
+          type: video-player:controls
+          transform:
+            x: 480
+            y: 450
+            z: 198
+            w: 640
+            h: 60
+          data:
+            autoplay: false
+            loop: none
+            shuffle: false
+            audioOnly: false
+            apiBase: https://videoplayer.youkan.uk
+        - id: playlist
+          type: video-player:playlist
+          transform:
+            x: 480
+            y: 520
+            z: 198
+            w: 310
+            h: 300
+          data:
+            playlist: []
+            currentIndex: 0
+        - id: search
+          type: video-player:search
+          transform:
+            x: 810
+            y: 520
+            z: 198
+            w: 310
+            h: 300
+          data: {}
