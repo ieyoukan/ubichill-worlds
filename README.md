@@ -24,3 +24,21 @@ https://raw.githubusercontent.com/ieyoukan/ubichill-worlds/main/worlds/chillwa.y
 ## ロックの更新
 
 `*.lock.json` は、利用するmodのversion・worker hash・capability上限を固定するセキュリティ境界です。modを更新するときは、対応するUbichill CLIで再生成し、YAMLと一緒にレビュー・コミットします。
+
+Node.js 22以上を用意し、最初に依存関係をインストールしてください。
+
+```bash
+npm ci
+```
+
+lockを現在公開されているmodから再生成するには、次を実行します。
+
+```bash
+npm run lock
+```
+
+ファイルを書き換えず、コミット済みのlockが最新の解決結果と一致するか確認するには、次を実行します。
+
+```bash
+npm run lock:check
+```

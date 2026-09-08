@@ -3,7 +3,7 @@ kind: World
 metadata:
   name: chillwa
   author:
-    name: devようかん
+    name: ようかん
     url: https://github.com/ieyoukan
   version: 1.0.0
 spec:
@@ -21,122 +21,123 @@ spec:
     - name: pen
       source:
         version: latest
-    - name: video-player
-      source:
-        url: https://ieyoukan.github.io/ubichill-videoplayer
-        version: latest
   initialEntities:
+    # 画面固定のペン置き場。overlay を付けると transform が画面座標(左上からの距離)になり、
+    # ワールドをどこまでスクロールしても・スマホの狭い画面でも必ず手元に残る。
+    # 親のトレイと子のペンすべてに同じ overlay を指定して、座標系を揃える必要がある
+    # (子 Entity の座標は親からの相対で、flatten 時に親原点と合成されるため)。
     - id: pentray
       tags: []
       children:
-        - id: pen-blue
+        - id: pen
           tags: []
           children: []
           transform:
+            h: 48
+            w: 55
             x: 9
             y: 7
             z: 6
-            w: 55
-            h: 48
             scale: 1
             rotation: 0
           components:
-            - type: pen:pen
-              overlay: top-left
-              data:
+            - data:
                 color: "#93bcf0"
                 strokeWidth: 4
-        - id: pen-black
+              type: pen:pen
+              overlay: top-left
+        - id: pen2
           tags: []
           children: []
           transform:
+            h: 57
+            w: 57
             x: 76
             y: 6
             z: 6
-            w: 57
-            h: 57
             scale: 1
             rotation: 0
           components:
-            - type: pen:pen
-              overlay: top-left
-              data:
+            - data:
                 color: "#1a1a1a"
                 strokeWidth: 4
+              type: pen:pen
+              overlay: top-left
       transform:
+        h: 67
+        w: 266
         x: 16
         y: 16
         z: 4
-        w: 266
-        h: 67
         scale: 1
         rotation: 0
       components:
-        - type: pen:tray
+        - data: {}
+          type: pen:tray
           overlay: top-left
-          data: {}
-    - id: drawing-layer
+    - id: pen-canvas
       tags: []
       children: []
       transform:
-        x: 0
-        y: 0
+        x: 530
+        y: 49
         z: 60
         scale: 1
         rotation: 0
       components:
-        - type: pen:canvas
-          data: {}
-    - id: lounge-player
+        - data: {}
+          type: pen:canvas
+    # 2 つ目のペン置き場。1 つ目の下に並べて置く。
+    # 重要: pen:tray:release は scope:'world' で全ペンへ配信され、タップされたトレイの x/y が
+    # そのままペンの transform になる。アンカー(overlay の値)はペン側の設定が使われるため、
+    # ワールド座標と画面座標を混ぜたり、別々の角を基準にしたりすると、系をまたいだ瞬間に
+    # ペンが全く違う場所へ飛ぶ。同じワールドのペンとトレイは overlay の値まで揃える。
+    - id: pentray2
       tags: []
-      children: []
+      children:
+        - id: pen-copy
+          tags: []
+          children: []
+          transform:
+            h: 48
+            w: 55
+            x: 9
+            y: 14
+            z: 6
+            scale: 1
+            rotation: 0
+          components:
+            - data:
+                color: "#93bcf0"
+                strokeWidth: 4
+              type: pen:pen
+              overlay: top-left
+        - id: pen-copy-2
+          tags: []
+          children: []
+          transform:
+            h: 48
+            w: 55
+            x: 64
+            y: 14
+            z: 6
+            scale: 1
+            rotation: 0
+          components:
+            - data:
+                color: "#44474b"
+                strokeWidth: 4
+              type: pen:pen
+              overlay: top-left
       transform:
-        x: 0
-        y: 0
-        z: 0
+        h: 75
+        w: 175
+        x: 16
+        y: 96
+        z: 7
         scale: 1
         rotation: 0
       components:
-        - id: screen
-          type: video-player:screen
-          transform:
-            x: 480
-            y: 80
-            z: 100
-            w: 640
-            h: 360
-          data: {}
-        - id: controls
-          type: video-player:controls
-          transform:
-            x: 480
-            y: 450
-            z: 198
-            w: 640
-            h: 60
-          data:
-            autoplay: false
-            loop: none
-            shuffle: false
-            audioOnly: false
-            apiBase: https://videoplayer.youkan.uk
-        - id: playlist
-          type: video-player:playlist
-          transform:
-            x: 480
-            y: 520
-            z: 198
-            w: 310
-            h: 300
-          data:
-            playlist: []
-            currentIndex: 0
-        - id: search
-          type: video-player:search
-          transform:
-            x: 810
-            y: 520
-            z: 198
-            w: 310
-            h: 300
-          data: {}
+        - data: {}
+          type: pen:tray
+          overlay: top-left
