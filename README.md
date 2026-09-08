@@ -11,6 +11,8 @@ Ubichillで遊べるワールドを、アプリ本体やmodのリリース周期
 - Video Player: `3.0.0`（Ubichill mod protocol v3対応Hostが必要）
 - Video backend: `https://videoplayer.youkan.uk`
 
+YAMLではmod更新の意図を`latest`で表し、実行時に使うversion・worker hash・capabilityは兄弟のlock fileで固定しています。`latest`が実行のたびに変わることはありません。
+
 公開後は次のURLをUbichillへ入力して参加できます。
 
 ```text

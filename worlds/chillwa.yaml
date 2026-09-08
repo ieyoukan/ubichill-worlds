@@ -20,11 +20,11 @@ spec:
   dependencies:
     - name: pen
       source:
-        version: 2.0.0
+        version: latest
     - name: video-player
       source:
         url: https://ieyoukan.github.io/ubichill-videoplayer
-        version: 3.0.0
+        version: latest
   initialEntities:
     - id: pentray
       tags: []
