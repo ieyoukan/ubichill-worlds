@@ -3,12 +3,12 @@
   "mods": {
     "video-player": {
       "id": "video-player",
-      "version": "3.0.0",
-      "manifestIntegrity": "sha256-uz9RryEDfUN5GT7bhI3BQaK5LkshL2ITOryazrc/PgA=",
+      "version": "3.0.1",
+      "manifestIntegrity": "sha256-smQVp7MvMssXdtZ3F7jmRJD2S/Mno+FKdKTMvAE71oo=",
       "components": {
         "video-player:controls": {
-          "workerUrl": "./controls/index.69749d6e.js",
-          "integrity": "sha256-aXSdbkKEFB/cK5Cabl/uPlagKVKjlxWn5YSpVecrdDQ=",
+          "workerUrl": "./controls/index.fda2398f.js",
+          "integrity": "sha256-/aI5jxp7WZO2ZIsVFG0sdUAj+Vi/3qXd+1Y59x7YS+o=",
           "capabilities": [
             "event:emit",
             "net:fetch",
