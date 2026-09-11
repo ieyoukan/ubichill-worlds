@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "lock": "ubichill install worlds/chillwa.yaml --base-url=https://ubichill.github.io/ubichill/mods",
+    "lock": "ubichill install worlds/chillwa.yaml",
     "lock:check": "npm run lock -- --check"
   },
   "engines": {
     "node": ">=22"
   },
   "devDependencies": {
-    "ubichill": "2.0.1"
+    "ubichill": "2.1.0"
   }
 }

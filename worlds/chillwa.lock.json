@@ -84,7 +84,8 @@
             "ui:render"
           ]
         }
-      }
+      },
+      "baseUrl": "https://ubichill.github.io/ubichill/mods"
     }
   }
 }

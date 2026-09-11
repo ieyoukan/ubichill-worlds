@@ -13,9 +13,6 @@ spec:
     default: 10
     max: 20
   environment:
-    worldSize:
-      width: 1600
-      height: 1000
     backgroundColor: "#EEF3F8"
   dependencies:
     - name: video-player
@@ -24,6 +21,7 @@ spec:
         version: latest
     - name: pen
       source:
+        url: https://ubichill.github.io/ubichill/mods
         version: latest
   initialEntities:
     - id: video-player
