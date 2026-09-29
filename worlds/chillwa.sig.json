@@ -1,9 +1,9 @@
 {
   "version": 1,
   "alg": "ed25519",
-  "publicKey": "i6zW3bk47m1sVZCPPb2JJtekU4cm79vOpj1xYPOQk_8",
+  "publicKey": "VBAhNtkfNkKqPWPgjiKkrHhbaYwOl3GSw-XmIo2G4Ls",
   "name": "chillwa",
   "contentHash": "sha256-CO0ZxzLyrxuySREKET+iW0M5VorF3B9uN7IJvJPTjCo=",
   "author": "youkan@pr-188.ubichill.com",
-  "signature": "dXDwzDISBiGf3yOLQt3Wvwz9FObgtew2xcGMkeFaOhvU5JrSdESub3XEjlHVWSSSVcoSBhstkizjv2fBf9I6CA"
+  "signature": "ROUQ2EIw38LgZtcTRt17bwwIwRVe2YgATlS99v2B8AZKD8jiwAecpHP03HMZ_rPGocQ6MtDjJuCoaXShdnFRDQ"
 }
