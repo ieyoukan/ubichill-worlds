@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "alg": "ed25519",
+  "publicKey": "Xwi8ZXeIIqnHnaAXh_3gOu4E99plAkscHZoT_EYw46o",
+  "name": "chillwa",
+  "contentHash": "sha256-CO0ZxzLyrxuySREKET+iW0M5VorF3B9uN7IJvJPTjCo=",
+  "author": "youkan@pr-189.ubichill.com",
+  "signature": "L9RglcGoBu5ET14CQfKdQnAFI3hPRcLd9yT6Z7mVJTnH55CAj68FlY-ft71DL4eXJLcqeZs3thLcugIlOyJmAg"
+}
