@@ -3,12 +3,12 @@
   "mods": {
     "video-player": {
       "id": "video-player",
-      "version": "3.0.1",
-      "manifestIntegrity": "sha256-PTwP1Kl+HtjDpw2P7YyjKUYQmjkMYRY8rSq3bAyHk5k=",
+      "version": "3.1.0",
+      "manifestIntegrity": "sha256-zwZzXgD04B6GRxHNhK5mu1HBvNvsYijhs/DIXt/RCP4=",
       "components": {
         "video-player:controls": {
-          "workerUrl": "./controls/index.f6217a79.js",
-          "integrity": "sha256-9iF6ebxM7f+Tw39PfgpG3pM6uGknOKzehTKf/5SpnD8=",
+          "workerUrl": "./controls/index.de5e6bfd.js",
+          "integrity": "sha256-3l5r/UWSP6xyUg27YVLQ95rT6NSf6g+nK7939dq+0Gk=",
           "capabilities": [
             "event:emit",
             "net:fetch",
@@ -18,8 +18,8 @@
           ]
         },
         "video-player:playlist": {
-          "workerUrl": "./playlist/index.c019faac.js",
-          "integrity": "sha256-wBn6rBxURJnu4rc6Womao/fNLsmGj6s1CEcoJsiba1w=",
+          "workerUrl": "./playlist/index.b0f1079e.js",
+          "integrity": "sha256-sPEHnoUKSv8Fs4/RV4YfHq9QAd4Xitr1kSoMfKvl4rc=",
           "capabilities": [
             "event:emit",
             "scene:read",
@@ -36,8 +36,8 @@
           ]
         },
         "video-player:search": {
-          "workerUrl": "./search/index.d0758a28.js",
-          "integrity": "sha256-0HWKKHh0RUuo9EdaKy5KAFrZmeWSirPrnHW7Evzpra4=",
+          "workerUrl": "./search/index.a920a8d0.js",
+          "integrity": "sha256-qSCo0MI5VdB7ddo6uU0nKok8vIecqUNubDM0DBH0PTU=",
           "capabilities": [
             "event:emit",
             "net:fetch",

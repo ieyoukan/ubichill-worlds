@@ -5,7 +5,7 @@ metadata:
   author:
     name: ようかん
     url: https://github.com/ieyoukan
-  version: 1.0.0
+  version: 1.0.1
 spec:
   displayName: ちるわ
   description: "ペンで自由に描きながら、みんなで動画や音楽を楽しむチルワールド"

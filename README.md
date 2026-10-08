@@ -8,8 +8,9 @@ Ubichillで遊べるワールドを、アプリ本体やmodのリリース周期
 
 - World: [`worlds/chillwa.yaml`](./worlds/chillwa.yaml)
 - Integrity lock: [`worlds/chillwa.lock.json`](./worlds/chillwa.lock.json)
-- Video Player: `3.0.1`（Ubichill mod protocol v3対応Hostが必要）
+- Video Player: `3.1.0`（Ubichill mod protocol v3対応Hostが必要）
 - Video backend: `https://videoplayer.youkan.uk`
+- 動画 API は mod が取得する短時間の匿名トークンを使用します。利用者のログインや Ubichill サーバーの信頼リストは不要です。
 
 各dependencyの`source.url`に公開元を記録しているため、このリポジトリ単体でlockを再生成できます。
 `--base-url`や本体リポジトリの`mods/`は必要ありません。YAMLではmod更新の意図を`latest`で表し、
@@ -29,7 +30,7 @@ https://ieyoukan.github.io/ubichill-worlds/worlds/chillwa.yaml
 `main`へのpush、またはActionsの「Publish worlds to GitHub Pages」の手動実行で公開します。
 GitHubのSettings → Pages → Sourceは **GitHub Actions** に設定します。
 
-ubichill `2.4.0`の`ci create`で生成した文字列を、Repository Secret `UBICHILL_CREDENTIALS`に登録します。
+ubichill `3.1.0`の`ci create`で生成した文字列を、Repository Secret `UBICHILL_CREDENTIALS`に登録します。
 この認証情報にはサーバー・作者アカウント・トークン・署名用秘密鍵・公開環境IDが含まれるため、
 別の鍵Secretは不要です。秘密鍵はリポジトリや公開ファイルに保存しません。
 
