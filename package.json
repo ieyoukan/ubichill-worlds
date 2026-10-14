@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build:pages": "ubichill publish worlds/*.yaml --server=https://ubichill.com --no-install --out=dist/worlds && cp public/index.html dist/index.html",
+    "build:pages": "ubichill publish worlds/*.yaml --server=https://ubichill.com --no-install --out=dist/worlds --public-url=https://ieyoukan.github.io/ubichill-worlds/worlds && cp public/index.html dist/index.html",
     "lock": "ubichill install worlds/chillwa.yaml",
     "lock:check": "npm run lock -- --check"
   },
@@ -11,6 +11,6 @@
     "node": ">=22"
   },
   "devDependencies": {
-    "ubichill": "3.1.0"
+    "ubichill": "3.3.0"
   }
 }
