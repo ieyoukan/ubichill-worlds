@@ -30,12 +30,12 @@ https://ieyoukan.github.io/ubichill-worlds/worlds/chillwa.yaml
 `main`へのpush、またはActionsの「Publish worlds to GitHub Pages」の手動実行で公開します。
 GitHubのSettings → Pages → Sourceは **GitHub Actions** に設定します。
 
-ubichill `3.1.0`の`ci create`で生成した文字列を、Repository Secret `UBICHILL_CREDENTIALS`に登録します。
+`@ubichill/cli`の`ci create`で生成した文字列を、Repository Secret `UBICHILL_CREDENTIALS`に登録します。
 この認証情報にはサーバー・作者アカウント・トークン・署名用秘密鍵・公開環境IDが含まれるため、
 別の鍵Secretは不要です。秘密鍵はリポジトリや公開ファイルに保存しません。
 
 ```bash
-npx ubichill ci create --server=https://ubichill.com --name="GitHub Actions: ieyoukan/ubichill-worlds"
+npx @ubichill/cli ci create --server=https://ubichill.com --name="GitHub Actions: ieyoukan/ubichill-worlds"
 ```
 
 Actionsでは`npm ci`後に`npm run build:pages`を実行し、`dist/worlds/`にYAML・lock・`.sig.json`を
@@ -43,6 +43,15 @@ Actionsでは`npm ci`後に`npm run build:pages`を実行し、`dist/worlds/`に
 公開時に`latest`を再解決しません。modを更新する場合は、下記の手順でlockを更新してコミットしてください。
 署名にはCIで承認した作者アカウントが入り、Ubichillは登録済み公開鍵で作者を確認します。
 元のraw GitHub URLにはCIで生成した署名がないため、参加にはPagesのURLを使ってください。
+
+## 手元で試す
+
+```bash
+npm ci
+npm run dev   # ubichill dev: http://localhost:3333/ で ちるわ を本番と同じ Go と画面で動かす
+```
+
+外の mod はコミット済みの lock の版（本番と同じ）を使います。YAML か lock を保存すると部屋を作り直します。
 
 ## ロックの更新
 
