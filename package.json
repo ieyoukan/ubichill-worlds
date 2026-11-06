@@ -12,6 +12,6 @@
     "node": ">=22"
   },
   "devDependencies": {
-    "@ubichill/cli": "1.0.1"
+    "@ubichill/cli": "1.1.0"
   }
 }
