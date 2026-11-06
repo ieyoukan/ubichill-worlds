@@ -5,7 +5,7 @@ metadata:
   author:
     name: ようかん
     url: https://github.com/ieyoukan
-  version: 1.0.1
+  version: 1.1.0
 spec:
   displayName: ちるわ
   description: "ペンで自由に描きながら、みんなで動画や音楽を楽しむチルワールド"
@@ -38,16 +38,11 @@ spec:
             z: 2
             scale: 1
             rotation: 0
+          # 動画を映す場所（Host 組み込み）。controls の screen がここを指す
           components:
             - data:
-                loop: none
-                shuffle: false
-                duration: 0
-                playlist: []
-                isPlaying: false
-                currentTime: 0
-                currentIndex: 0
-              type: video-player:screen
+                fit: contain
+              type: core:media
         - id: video-player-controls
           tags: []
           children: []
@@ -62,6 +57,8 @@ spec:
           components:
             - data:
                 apiBase: https://videoplayer.youkan.uk
+                screen: video-player-screen
+                playlist: playlist
               type: video-player:controls
         - id: playlist
           tags: []
@@ -93,7 +90,8 @@ spec:
             scale: 1
             rotation: 0
           components:
-            - data: {}
+            - data:
+                playlist: playlist
               type: video-player:search
       transform:
         h: 781
